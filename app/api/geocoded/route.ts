@@ -1,3 +1,4 @@
+"use server"
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 import { isDynamicServerError } from "next/dist/client/components/hooks-server-context";
