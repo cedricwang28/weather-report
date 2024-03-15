@@ -2,10 +2,9 @@ import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
+  const apiKey = process.env.OPENWEATHERMAP_API_KEY;
+  const searchParams = req.nextUrl.searchParams;
   try {
-    const apiKey = process.env.OPENWEATHERMAP_API_KEY;
-    const searchParams = req.nextUrl.searchParams;
-
     const city = searchParams.get("search");
     const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`;
 
