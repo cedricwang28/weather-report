@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+export const dynamic = 'auto';
 import AirPollution from "./Components/AirPollution/AirPollution";
 import DailyForecast from "./Components/DailyForecast/DailyForecast";
 import FeelsLike from "./Components/FeelsLike/FeelsLike";
