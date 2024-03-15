@@ -55,8 +55,7 @@ export const GlobalContextProvider = ({ children }) => {
   //geocoded list
   const fetchGeoCodedList = async (search) => {
     try {
-      const res = await axios.get(`/api/geocoded?search=${search}`);
-
+      const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
       setGeoCodedList(res.data);
     } catch (error) {
       console.log("Error fetching geocoded list: ", error.message);
