@@ -23,7 +23,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const fetchForecast = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/weather?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
 
       setForecast(res.data);
     } catch (error) {
@@ -34,7 +34,7 @@ export const GlobalContextProvider = ({ children }) => {
   // Air Quality
   const fetchAirQuality = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/pollution?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
       setAirQuality(res.data);
     } catch (error) {
       console.log("Error fetching air quality data: ", error.message);
@@ -44,7 +44,7 @@ export const GlobalContextProvider = ({ children }) => {
   // five day forecast
   const fetchFiveDayForecast = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/fiveday?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
 
       setFiveDayForecast(res.data);
     } catch (error) {
@@ -65,7 +65,7 @@ export const GlobalContextProvider = ({ children }) => {
   //fetch uv data
   const fetchUvIndex = async (lat, lon) => {
     try {
-      const res = await axios.get(`/api/uv?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=uv_index_max,uv_index_clear_sky_max&timezone=auto&forecast_days=1`);
 
       seUvIndex(res.data);
     } catch (error) {
