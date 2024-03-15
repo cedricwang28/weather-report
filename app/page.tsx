@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = 'force-dynamic'
 import AirPollution from "./Components/AirPollution/AirPollution";
 import DailyForecast from "./Components/DailyForecast/DailyForecast";
 import FeelsLike from "./Components/FeelsLike/FeelsLike";
@@ -15,8 +16,6 @@ import Wind from "./Components/Wind/Wind";
 import defaultStates from "./utils/defaultStates";
 import FiveDayForecast from "./Components/FiveDayForecast/FiveDayForecast";
 import { useGlobalContextUpdate } from "./context/globalContext";
-
-export const dynamic = 'force-dynamic'
 
 export default function Home() {
   const { setActiveCityCoords } = useGlobalContextUpdate();
