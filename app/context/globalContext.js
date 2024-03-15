@@ -34,7 +34,7 @@ export const GlobalContextProvider = ({ children }) => {
   // Air Quality
   const fetchAirQuality = async (lat, lon) => {
     try {
-      const res = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
       setAirQuality(res.data);
     } catch (error) {
       console.log("Error fetching air quality data: ", error.message);
@@ -44,7 +44,7 @@ export const GlobalContextProvider = ({ children }) => {
   // five day forecast
   const fetchFiveDayForecast = async (lat, lon) => {
     try {
-      const res = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
 
       setFiveDayForecast(res.data);
     } catch (error) {
@@ -55,7 +55,7 @@ export const GlobalContextProvider = ({ children }) => {
   //geocoded list
   const fetchGeoCodedList = async (search) => {
     try {
-      const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
+      const res = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=69c6c5d730c9cc3d0d637a4597cabdd3`);
       setGeoCodedList(res.data);
     } catch (error) {
       console.log("Error fetching geocoded list: ", error.message);
